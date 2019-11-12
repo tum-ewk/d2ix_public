@@ -58,6 +58,7 @@ def test_model_without_historical(baseline_model_config: TestConfig) -> None:
     model.model_par['year'] = list(
         range(baseline_model_config.first_model_year, baseline_model_config.last_model_year + 1,
               baseline_model_config.model_range_year))
+
     getattr(model, 'model_par')['initial_activity_up']['value'] = 25.0
 
     scenario = model.model2db()
